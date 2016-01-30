@@ -1,2 +1,2 @@
 require("babel-register");
-require("./src/cex-check").default();
+require("./src/cex-checker").default();

@@ -17,6 +17,7 @@
     "babel-register": "^6.4.3",
     "install": "^0.4.1",
     "jsdom": "^8.0.1",
-    "npm": "^3.6.0"
+    "npm": "^3.6.0",
+    "play-sound": "0.0.7"
   }
 }
