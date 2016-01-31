@@ -1,11 +1,15 @@
 {
   "name": "cex-checker",
   "version": "1.0.0",
-  "description": "A back in stock alerter for CEX",
+  "description": "A simple stock checking app for the CEX website",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulroper/cex-checker.git"
   },
   "author": "Paul Roper",
   "license": "ISC",
