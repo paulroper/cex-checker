@@ -3,6 +3,8 @@
 A simple little Node stock checking app for the [CEX](https://uk.webuy.com) website. Useful if there's a rare game you're after!
 
 ### Usage
+The app was developed using Node v5.5.0 but it should work fine on lower versions too.
+
 * Run `npm install`
 * Create a `config.json` based on the example if you want to set up your own check interval or to receive a back in stock email
 * Start the app with `npm start` along with the SKU of the product you want to set up an alert for
