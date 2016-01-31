@@ -1,0 +1,10 @@
+{
+  "checkInterval": 20, // Minutes between each stock check
+  "email": {
+    "username": "me@email.com",
+    "password": "password123",
+    "host": "smtp.email.com",
+    "port": 465,
+    "secure": true // Use SSL
+  }
+}
