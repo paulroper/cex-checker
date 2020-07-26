@@ -1,3 +1,4 @@
+import { green, red, yellow } from 'chalk';
 import { createTransport } from "nodemailer";
 
 import { Config } from './config';
@@ -5,7 +6,7 @@ import { log, logError, logWarning } from './logger';
 
 export const sendBackInStockEmail = (productName: string, url: string, config: Config): void => {
   if (!config.email) {
-    logWarning('Not sending email as no recipient has been configured\n');
+    logWarning(yellow('Not sending email as no recipient has been configured\n'));
     return;
   }
 
@@ -32,7 +33,7 @@ export const sendBackInStockEmail = (productName: string, url: string, config: C
 
   transporter.sendMail(mailOptions, (error) => {
     if (error) {
-      logError(`Error sending back in stock email`);
+      logError(red(`Error sending back in stock email`));
 
       console.log();
       console.error(error);
@@ -41,6 +42,6 @@ export const sendBackInStockEmail = (productName: string, url: string, config: C
       return;
     }
 
-    log(`Back in stock email sent to ${config.email.username}\n`);
+    log(green(`Back in stock email sent to ${config.email.username}\n`));
   });
 }

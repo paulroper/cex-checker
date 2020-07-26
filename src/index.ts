@@ -1,3 +1,4 @@
+import { green, red, yellow } from 'chalk';
 import { program } from 'commander';
 import player from "play-sound";
 
@@ -22,11 +23,11 @@ const check = (productId: string, config: Config) => async () => {
   }
 
   if (product.outOfStock) {
-    log(`${product.name} is out of stock\n`);
+    log(yellow(`${product.name} is out of stock\n`));
     return;
   }
 
-  log(`${product.name} is in stock! Click here to go to the product page: ${product.url}`);
+  log(`${green(`${product.name} is in stock!`)} Click here to go to the product page: ${product.url}`);
   player().play("./assets/success.mp3");
 
   if (!mailSent) {
@@ -42,19 +43,19 @@ program.parse(process.argv);
 
 const productId = process.argv[2];
 if (productId == null) {
-  log("Usage: yarn start <PRODUCT ID> -c | --config <PATH TO CONFIG FILE>");
+  log(yellow("Usage: yarn start <PRODUCT ID> -c | --config <PATH TO CONFIG FILE>"));
   process.exit(0);
 }
 
 const { configPath } = program;
 if (configPath == null) {
-  log("Usage: yarn start <PRODUCT SKU> -c | --config <PATH TO CONFIG FILE>");
+  log(yellow("Usage: yarn start <PRODUCT SKU> -c | --config <PATH TO CONFIG FILE>"));
   process.exit(0);
 }
 
 const config = loadConfig(configPath);
 if (config == null) {
-  logError('Please provide a valid JSON config file matching the example');
+  logError(red('Please provide a valid JSON config file matching the example'));
   process.exit(0);
 }
 

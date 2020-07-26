@@ -19,7 +19,7 @@ export const loadConfig = (configPath: string): Config | undefined => {
     const config: Config = require(resolve(process.cwd(), configPath));
     return config;
   } catch (e) {
-    logError(`Failed to load config file: ${configPath}\n`);
+    logError(`Failed to load config file: ${configPath}`);
     return;
   }
 }
