@@ -15,6 +15,7 @@ export interface Config {
 
 export const loadConfig = (configPath: string): Config | undefined => {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const config: Config = require(resolve(process.cwd(), configPath));
     return config;
   } catch (e) {

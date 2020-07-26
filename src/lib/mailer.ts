@@ -3,7 +3,7 @@ import { createTransport } from "nodemailer";
 import { Config } from './config';
 import { log, logError, logWarning } from './logger';
 
-export function sendBackInStockEmail(productName: string, url: string, config: Config) {
+export const sendBackInStockEmail = (productName: string, url: string, config: Config): void => {
   if (!config.email) {
     logWarning('Not sending email as no recipient has been configured\n');
     return;

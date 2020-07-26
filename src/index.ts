@@ -6,11 +6,9 @@ import { Config, loadConfig } from './lib/config';
 import { logError, log } from './lib/logger';
 import { sendBackInStockEmail } from "./lib/mailer";
 
-let attempts = 0;
 let mailSent = false;
 
 const check = (productId: string, config: Config) => async () => {
-  attempts += 1;
   log(`Fetching product...`);
 
   let product;
@@ -31,8 +29,10 @@ const check = (productId: string, config: Config) => async () => {
   log(`${product.name} is in stock!`);
   player().play("./assets/success.mp3");
 
-  sendBackInStockEmail(product.name, product.url, config);
-  mailSent = true;
+  if (!mailSent) {
+    sendBackInStockEmail(product.name, product.url, config);
+    mailSent = true;
+  }
 
   return;
 };
