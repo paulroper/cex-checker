@@ -4,8 +4,10 @@
   "description": "A simple stock checking app for the CEX website",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "yarn tsc -p tsconfig.json",
+    "lint": "yarn eslint ./src --ext .js,.jsx,.ts,.tsx",
+    "start": "yarn build && node ./dist/index.js",
+    "start:nobuild": "node ./dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -14,15 +16,21 @@
   "author": "Paul Roper",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^1.10.3"
+    "@types/jsdom": "^16.2.3",
+    "@types/node-fetch": "^2.5.7",
+    "@types/nodemailer": "^6.4.0",
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
-    "babel-preset-es2015": "^6.3.13",
-    "babel-register": "^6.4.3",
-    "install": "^0.4.1",
-    "jsdom": "^8.0.1",
-    "nodemailer": "^2.0.0",
-    "npm": "^3.6.0",
-    "play-sound": "0.0.7"
+    "commander": "^6.0.0",
+    "jsdom": "^16.3.0",
+    "node-fetch": "^2.6.0",
+    "nodemailer": "^6.4.10",
+    "play-sound": "^1.1.3"
   }
 }
