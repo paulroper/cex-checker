@@ -26,7 +26,7 @@ const check = (productId: string, config: Config) => async () => {
     return;
   }
 
-  log(`${product.name} is in stock!`);
+  log(`${product.name} is in stock! Click here to go to the product page: ${product.url}`);
   player().play("./assets/success.mp3");
 
   if (!mailSent) {
