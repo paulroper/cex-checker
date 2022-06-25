@@ -30,7 +30,7 @@
     "chalk": "^4.1.0",
     "commander": "^6.0.0",
     "jsdom": "^16.3.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "nodemailer": "^6.4.10",
     "play-sound": "^1.1.3"
   }
